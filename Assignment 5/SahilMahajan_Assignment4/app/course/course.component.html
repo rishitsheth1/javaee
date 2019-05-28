@@ -1,0 +1,52 @@
+<div>
+  <h1>Angular 7 - Spring Boot Client</h1>
+  <p>
+      See /app/course.service.ts for the API call code.
+  </p>
+  <h2>List of Courses</h2>
+  <table>
+      <tr *ngFor="let course of courses">
+          <td>
+              <input type="text" name="courseCode" [(ngModel)]="course.courseCode">
+          </td>
+          <td>
+              <input type="text" name="courseName" [(ngModel)]="course.courseName">
+          </td>
+          <td>
+            <input type="text" name="courseDescription" [(ngModel)]="course.courseDescription">
+        </td>
+        <td><button class="form-field-no-caption" (click)="updateCourse(course.courseCode,
+            course.courseName,course.courseDescription)"> Update Course</button></td>
+
+        <td><button class="form-field-no-caption" (click)="deleteCourse(course)"> Delete Course</button></td>
+      </tr>
+  </table>
+  
+  <h2>Enter new Courses</h2>
+
+  <div class="container">
+    <label>
+        <b>Course code:</b>
+    </label>
+    <input type="text" class="fields" name="courseCode" [(ngModel)]="courseCode" />
+</div>
+<div class="container">
+    <label>
+        <b>Course name:</b>
+    </label>
+    <input type="text" class="fields" name="courseName" [(ngModel)]="courseName" />
+</div>
+<div class="container">
+  <label>
+      <b>Course description:</b>
+  </label>
+  <input type="text" class="fields" name="courseDescription" [(ngModel)]="courseDescription" />
+</div>
+
+<div class="container">
+    <button class="form-field-no-caption" (click)="createCourse(courseCode,courseName,courseDescription)">Save Course</button>
+</div>
+<div class="container">
+</div>
+  
+</div>
